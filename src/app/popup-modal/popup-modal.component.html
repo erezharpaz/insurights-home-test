@@ -1,0 +1,11 @@
+<ng-template #modalData let-modal let-c="close">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-basic-title">Choose from list:</h2>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <app-search-form (closePopup)="c('Item Selected')"></app-search-form>
+    </div>
+  </ng-template>

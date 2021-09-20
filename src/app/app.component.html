@@ -1,0 +1,22 @@
+<ul class="nav">
+    <li class="nav-item" (click)="drawer.toggle()">
+      <button class="btn btn-primary">Medical Conditions</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-secondary" (click)="openModal()">Choose from list</button>
+    </li>
+  </ul>
+<mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+        <app-side-menu></app-side-menu>
+      </mat-drawer>
+    
+    <div class="example-sidenav-content">
+        <app-medical-content></app-medical-content>
+    </div>
+  
+  </mat-drawer-container>
+
+  <app-popup-modal></app-popup-modal>
+

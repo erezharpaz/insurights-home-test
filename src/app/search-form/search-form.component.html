@@ -1,0 +1,26 @@
+<form>
+    <input 
+        type="text" 
+        [(ngModel)]="searchInput"  
+        name="search" 
+        (ngModelChange)="refreshSearch()"
+        placeholder="Serch for Condition..."
+        class="form-control" 
+    />
+</form>
+
+<div *ngIf="sortedData">
+    <div *ngFor="let items of sortedData">
+        <h3 class="text-capitalize letter-title">{{items[0].name.charAt(0)}}</h3>
+        <ul class="list-group list-group-flush" >
+            <li 
+                class="list-group-item text-capitalize" 
+                *ngFor="let item of items"
+                [innerHtml]="item.name"   
+                (click)="setItem(item)"
+            >         
+            </li>
+        </ul>
+    </div>
+</div>
+

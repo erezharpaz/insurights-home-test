@@ -1,0 +1,35 @@
+<div class="container" >
+    <div class="row" *ngIf="medicalItem">
+        <div class="col-sm">
+            <h1 class="text-capitalize">{{medicalItem.name}}</h1>
+
+            <div>
+                <h2>Description:</h2>
+                <p [innerHtml]="medicalItem.description ? medicalItem.description : noDesMessage"></p>
+            </div>
+
+            <div *ngIf="medicalItem.services.stage1"> 
+                <h2>Services Stage 1:</h2>
+                <ul class="list-group">
+                    <li 
+                        class="list-group-item list-group-item-info text-capitalize"
+                        *ngFor="let service of medicalItem.services.stage1"
+                        [innerHtml]="service.title"
+                    >
+                    </li>
+                </ul>
+            </div>
+        </div>        
+      
+        <div class="col-sm">
+            
+        </div>    
+    </div>
+
+    <h2 *ngIf="!medicalItem">
+        choose a medical condition from the list
+    </h2>
+</div>
+
+
+

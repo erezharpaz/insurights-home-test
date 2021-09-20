@@ -1,0 +1,12 @@
+<ul class="list-group list-group-flush" *ngIf="data">
+    <li 
+        class="medical-condition-item list-group-item text-capitalize" 
+        *ngFor="let item of data; let i = index"
+        [innerHtml]="item.name"
+        (click)="setItem(item)"
+        [id]="item._id"
+    >   
+    </li>
+</ul>
+
+
